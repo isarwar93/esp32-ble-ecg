@@ -1,0 +1,31 @@
+[1/9] Performing build step for 'bootloader'
+[1/1] cd /home/ismail/esp32-ble-ecg/esp32-c6/build/bootloader/esp-idf/esptool_py && /home/ismail/.espressif/python_env/idf5.1_py3.12_env/bin/python /home/ismail/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/ismail/esp32-ble-ecg/esp32-c6/build/bootloader/bootloader.bin
+Bootloader binary size 0x5060 bytes. 0x2fa0 bytes (37%) free.
+[2/9] No install step for 'bootloader'
+[3/9] Completed 'bootloader'
+[4/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+/home/ismail/esp32-ble-ecg/esp32-c6/main/main.c: In function 'app_main':
+/home/ismail/esp32-ble-ecg/esp32-c6/main/main.c:59:54: warning: passing argument 3 of 'adc_oneshot_read' from incompatible pointer type [-Wincompatible-pointer-types]
+   59 |         adc_oneshot_read(adc1_handle, ADC_CHANNEL_2, &heartrate);
+      |                                                      ^~~~~~~~~~
+      |                                                      |
+      |                                                      uint8_t * {aka unsigned char *}
+In file included from /home/ismail/esp32-ble-ecg/esp32-c6/main/main.c:8:
+/home/ismail/esp/esp-idf/components/esp_adc/include/esp_adc/adc_oneshot.h:89:87: note: expected 'int *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   89 | esp_err_t adc_oneshot_read(adc_oneshot_unit_handle_t handle, adc_channel_t chan, int *out_raw);
+      |                                                                                  ~~~~~^~~~~~~
+/home/ismail/esp32-ble-ecg/esp32-c6/main/main.c: At top level:
+/home/ismail/esp32-ble-ecg/esp32-c6/main/main.c:30:20: warning: 'TAG' defined but not used [-Wunused-variable]
+   30 | static const char *TAG = "BLE_CLIENT";
+      |                    ^~~
+[5/9] Linking C static library esp-idf/main/libmain.a
+[6/9] Generating ld/sections.ld
+[7/9] Linking CXX executable esp32-c6.elf
+[8/9] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32c6 image...
+Merged 2 ELF sections
+Successfully created esp32c6 image.
+Generated /home/ismail/esp32-ble-ecg/esp32-c6/build/esp32-c6.bin
+[9/9] cd /home/ismail/esp32-ble-ecg/esp32-c6/build/esp-idf/esptool_py && /home/ismail/.espressif/python_env/idf5.1_py3.12_env/bin/python /home/ismail/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/ismail/esp32-ble-ecg/esp32-c6/build/partition_table/partition-table.bin /home/ismail/esp32-ble-ecg/esp32-c6/build/esp32-c6.bin
+esp32-c6.bin binary size 0x88340 bytes. Smallest app partition is 0x100000 bytes. 0x77cc0 bytes (47%) free.

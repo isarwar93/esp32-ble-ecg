@@ -1,0 +1,75 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /home/ismail/esp32-ble-ecg/esp32-c6/build/bootloader/esp-idf/esptool_py && /home/ismail/.espressif/python_env/idf5.1_py3.12_env/bin/python /home/ismail/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/ismail/esp32-ble-ecg/esp32-c6/build/bootloader/bootloader.bin
+Bootloader binary size 0x5060 bytes. 0x2fa0 bytes (37%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+/home/ismail/esp32-ble-ecg/esp32-c6/main/main.c:30:20: warning: 'TAG' defined but not used [-Wunused-variable]
+   30 | static const char *TAG = "BLE_CLIENT";
+      |                    ^~~
+[5/10] Linking C static library esp-idf/main/libmain.a
+[6/10] Generating ld/sections.ld
+[7/10] Linking CXX executable esp32-c6.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32c6 image...
+Merged 2 ELF sections
+Successfully created esp32c6 image.
+Generated /home/ismail/esp32-ble-ecg/esp32-c6/build/esp32-c6.bin
+[9/10] cd /home/ismail/esp32-ble-ecg/esp32-c6/build/esp-idf/esptool_py && /home/ismail/.espressif/python_env/idf5.1_py3.12_env/bin/python /home/ismail/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/ismail/esp32-ble-ecg/esp32-c6/build/partition_table/partition-table.bin /home/ismail/esp32-ble-ecg/esp32-c6/build/esp32-c6.bin
+esp32-c6.bin binary size 0x88390 bytes. Smallest app partition is 0x100000 bytes. 0x77c70 bytes (47%) free.
+[9/10] cd /home/ismail/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/ismail/esp/esp-idf -D "SERIAL_TOOL=/home/ismail/.espressif/python_env/idf5.1_py3.12_env/bin/python;;/home/ismail/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32c6" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/ismail/esp32-ble-ecg/esp32-c6/build -P /home/ismail/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32c6 -p /dev/ttyACM0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 esp32-c6.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port /dev/ttyACM0
+Connecting...
+Chip is ESP32-C6FH4 (QFN32) (revision v0.1)
+Features: WiFi 6, BT 5, IEEE802.15.4
+Crystal is 40MHz
+MAC: f0:f5:bd:ff:fe:2c:1e:64
+BASE MAC: f0:f5:bd:2c:1e:64
+MAC_EXT: ff:fe
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x00098fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 20576 bytes to 12867...
+Writing at 0x00000000... (100 %)
+Wrote 20576 bytes (12867 compressed) at 0x00000000 in 0.3 seconds (effective 479.7 kbit/s)...
+Hash of data verified.
+Compressed 557968 bytes to 326359...
+Writing at 0x00010000... (5 %)
+Writing at 0x0001b3f0... (10 %)
+Writing at 0x000223d2... (15 %)
+Writing at 0x000299fa... (20 %)
+Writing at 0x00030c05... (25 %)
+Writing at 0x00037eb7... (30 %)
+Writing at 0x0003e2f3... (35 %)
+Writing at 0x00044296... (40 %)
+Writing at 0x0004a4ef... (45 %)
+Writing at 0x000507fa... (50 %)
+Writing at 0x00056ac0... (55 %)
+Writing at 0x0005c706... (60 %)
+Writing at 0x0006303f... (65 %)
+Writing at 0x0006a564... (70 %)
+Writing at 0x00070cb6... (75 %)
+Writing at 0x000774e6... (80 %)
+Writing at 0x0007dbe9... (85 %)
+Writing at 0x00083c3e... (90 %)
+Writing at 0x0008a81c... (95 %)
+Writing at 0x00090d6a... (100 %)
+Wrote 557968 bytes (326359 compressed) at 0x00010000 in 4.3 seconds (effective 1031.8 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 564.2 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
