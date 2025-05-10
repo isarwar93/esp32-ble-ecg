@@ -1,10 +1,15 @@
 # esp32-ble-ecg
 
+I am using ESP32-C6 from DFrobot also called as Firebeetle-2. For code compilation and flashing using ESP-IDF. 
+
+https://www.dfrobot.com/product-2771.html
+
 ## To idf.py make available globally:
 . $HOME/esp/esp-idf/export.sh
 
 
 ## To add user in the usergroup to avoid permission error
+As, I am using Ubuntu for the development, to connect with the serial port of the ESP32 following command is necessary:
 
 sudo usermod -a -G dialout $USER
 Then log out and back in.
